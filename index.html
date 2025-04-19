@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Candy</title>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* gradient background */
+    font-family: Arial, sans-serif;
+    position: relative;
+    overflow: hidden; /* hide overflow to prevent scrollbars */
+  }
+
+  .banner-container {
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: 1;
+  }
+
+  .banner {
+    font-size: 36px;
+    color: #ff6666; /* bright red */
+    position: relative;
+    animation: scrollBanner 10s linear infinite;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* subtle shadow */
+  }
+
+  .banner span {
+    white-space: nowrap;
+    display: inline-block;
+  }
+
+  .banner-top {
+    top: 20px;
+  }
+
+  .banner-bottom {
+    bottom: 20px;
+  }
+
+  @keyframes scrollBanner {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 20px 40px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #33ccff; /* blue */
+    color: #fff;
+    border: 2px solid #ff6666; /* bright red border */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
+    animation: pulsate 1.5s infinite alternate, sway 3s infinite, changeColor 5s infinite;
+  }
+
+  @keyframes pulsate {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes sway {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    50% {
+      transform: rotateZ(5deg);
+    }
+    100% {
+      transform: rotateZ(0deg);
+    }
+  }
+
+  @keyframes changeColor {
+    0% {
+      background-color: #33ccff;
+    }
+    50% {
+      background-color: #0099ff; /* darker blue */
+    }
+    100% {
+      background-color: #33ccff;
+    }
+  }
+
+  button:hover {
+    background-color: #0099ff; /* darker blue color on hover */
+    transform: scale(1.05); /* slightly larger size on hover */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* more pronounced shadow on hover */
+  }
+</style>
+</head>
+<body>
+
+<div class="banner-container banner-top">
+  <div class="banner">
+    <span>🍭 FREE CANDY!! 🍬</span>
+  </div>
+</div>
+
+<div class="banner-container banner-bottom">
+  <div class="banner">
+    <span>🎉 LIMITED INVENTORY!! 🎉</span>
+  </div>
+</div>
+
+<div>
+  <button onclick="rickroll()">Get Your Free Candy Now!</button>
+</div>
+
+<script>
+function rickroll() {
+  window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Rick Astley - Never Gonna Give You Up
+}
+</script>
+
+</body>
+</html>
